@@ -8,27 +8,23 @@
 
         <menu>
         <item
-            android:id="@+id/orderName"
+            android:id="@+id/ordenarNombre"
             android:title="Ordenar por Nombre"
-            android:icon="@drawable/ic_share"
             />
 
         <item
-            android:id="@+id/orderGroup"
+            android:id="@+id/ordenarGrupo"
             android:title="Ordenar por Grupo"
-            android:icon="@drawable/ic_cloud"
             />
 
         <item
-            android:id="@+id/delete"
+            android:id="@+id/eliminar"
             android:title="Eliminar todos"
-            android:icon="@drawable/ic_print_black_24dp"
             />
 
         <item
-            android:id="@+id/change"
+            android:id="@+id/cambiar"
             android:title="Invertir la lista"
-            android:icon="@drawable/ic_content"
             />
     </menu>
     </item>

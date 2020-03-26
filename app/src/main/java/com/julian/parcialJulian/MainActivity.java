@@ -1,12 +1,10 @@
-package com.developer.parcialandroid.activitys;
-
+package com.julian.parcialJulian;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,28 +12,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.developer.parcialandroid.R;
-import com.developer.parcialandroid.adapters.PersonAdapter;
-import com.developer.parcialandroid.model.Person;
+import com.julian.parcialandroid.R;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String TAG = MainActivity.class.getSimpleName();
 
     private ListView listView;
-    private PersonAdapter adapter;
-    private List<Person> list;
+    private com.julian.parcialJulian.adapter adapter;
+    private List<Contact> list;
 
-    private static final int REQUEST_ADD = 110;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         list = new ArrayList<>();
         listView = findViewById(R.id.list);
         registerForContextMenu(listView);
-        adapter = new PersonAdapter(this, list);
+        adapter = new adapter(this, list);
         listView.setAdapter(adapter);
 
     }
@@ -62,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddPersonActivity.class);
-                startActivityForResult(intent, REQUEST_ADD);
+                Intent intent = new Intent(MainActivity.this, actividad_add.class);
+                startActivityForResult(intent, 450);
             }
         });
     }
@@ -71,10 +62,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_ADD) {
+        if (requestCode == 450) {
             if (resultCode == RESULT_OK) {
-                findViewById(R.id.txtInfo).setVisibility(View.GONE);
-                list.add((Person) data.getParcelableExtra("newPerson"));
+                list.add((Contact) data.getParcelableExtra("newPerson"));
                 adapter.notifyDataSetChanged();
             }
         }
@@ -96,27 +86,27 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.orderName:
-                Collections.sort(list, new Comparator<Person>() {
-                    public int compare(Person obj1, Person obj2) {
+            case R.id.ordenarNombre:
+                Collections.sort(list, new Comparator<Contact>() {
+                    public int compare(Contact obj1, Contact obj2) {
                         return obj1.getName().compareTo(obj2.getName());
                     }
                 });
                 adapter.notifyDataSetChanged();
                 return true;
-            case R.id.orderGroup:
-                Collections.sort(list, new Comparator<Person>() {
-                    public int compare(Person obj1, Person obj2) {
+            case R.id.ordenarGrupo:
+                Collections.sort(list, new Comparator<Contact>() {
+                    public int compare(Contact obj1, Contact obj2) {
                         return obj1.getGroup().compareTo(obj2.getGroup());
                     }
                 });
                 adapter.notifyDataSetChanged();
                 return true;
-            case R.id.delete:
+            case R.id.eliminar:
                 list.clear();
                 adapter.notifyDataSetChanged();
                 return true;
-            case R.id.change:
+            case R.id.cambiar:
                 Collections.reverse(list);
                 adapter.notifyDataSetChanged();
                 return true;
@@ -131,11 +121,11 @@ public class MainActivity extends AppCompatActivity {
         int index = info.position;
 
         switch (item.getItemId()){
-            case R.id.phoneRandom:
+            case R.id.phone:
                 list.get(index).setPhone(getNumberRandom());
                 adapter.notifyDataSetChanged();
                 return true;
-            case R.id.capital_name:
+            case R.id.Upper:
                 list.get(index).setName(list.get(index).getName().toUpperCase());
                 adapter.notifyDataSetChanged();
                 return true;

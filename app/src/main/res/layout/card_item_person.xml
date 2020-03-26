@@ -4,25 +4,25 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:paddingTop="4dp"
-    android:background="?attr/selectableItemBackground"
-    android:paddingBottom="4dp">
+    android:paddingBottom="3dp"
+    android:paddingTop="2dp"
+   >
 
     <TextView
         android:id="@+id/txtName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Pedro Arias"
+        android:text="nombre"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="24sp"
         />
 
     <TextView
         android:id="@+id/txtPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="300112222"
-        android:textSize="16sp"
+        android:text="33423422"
+        android:textSize="20sp"
        />
 
     <TextView
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Familia"
-        android:textSize="16sp"
+        android:textSize="20sp"
         />
 
 </LinearLayout>

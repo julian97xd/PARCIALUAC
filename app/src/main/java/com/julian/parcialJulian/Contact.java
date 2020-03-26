@@ -1,32 +1,32 @@
-package com.developer.parcialandroid.model;
+package com.julian.parcialJulian;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Person implements Parcelable {
+public class Contact implements Parcelable {
     private String name, phone, group;
 
-    public Person(String name, String phone, String group) {
+    public Contact(String name, String phone, String group) {
         this.name = name;
         this.phone = phone;
         this.group = group;
     }
 
-    protected Person(Parcel in) {
+    protected Contact(Parcel in) {
         name = in.readString();
         phone = in.readString();
         group = in.readString();
     }
 
-    public static final Creator<Person> CREATOR = new Creator<Person>() {
+    public static final Creator<Contact> CREATOR = new Creator<Contact>() {
         @Override
-        public Person createFromParcel(Parcel in) {
-            return new Person(in);
+        public Contact createFromParcel(Parcel in) {
+            return new Contact(in);
         }
 
         @Override
-        public Person[] newArray(int size) {
-            return new Person[size];
+        public Contact[] newArray(int size) {
+            return new Contact[size];
         }
     };
 
@@ -48,10 +48,6 @@ public class Person implements Parcelable {
 
     public String getGroup() {
         return group;
-    }
-
-    public void setGroup(String group) {
-        this.group = group;
     }
 
     @Override

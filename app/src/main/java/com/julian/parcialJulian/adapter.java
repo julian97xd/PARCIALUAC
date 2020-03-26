@@ -1,23 +1,23 @@
-package com.developer.parcialandroid.adapters;
+package com.julian.parcialJulian;
 
 import android.content.Context;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.developer.parcialandroid.R;
-import com.developer.parcialandroid.model.Person;
+import com.julian.parcialJulian.Contact;
+import com.julian.parcialandroid.R;
 
 import java.util.List;
 
-public class PersonAdapter extends ArrayAdapter<Person> {
+public class adapter extends ArrayAdapter<Contact> {
 
-    public PersonAdapter(Context context, List<Person> objects) {
+    public adapter(Context context, List<Contact> objects) {
         super(context, 0, objects);
     }
+
 
 
     @Override
@@ -34,12 +34,12 @@ public class PersonAdapter extends ArrayAdapter<Person> {
         TextView txtPhone = convertView.findViewById(R.id.txtPhone);
         TextView txtGroup = convertView.findViewById(R.id.txtGroup);
 
-        Person person = getItem(position);
+        Contact contact = getItem(position);
 
-        assert person != null;
-        txtName.setText(person.getName());
-        txtPhone.setText(person.getPhone());
-        txtGroup.setText(person.getGroup());
+        assert contact != null;
+        txtName.setText(contact.getName());
+        txtPhone.setText(contact.getPhone());
+        txtGroup.setText(contact.getGroup());
 
         return convertView;
     }

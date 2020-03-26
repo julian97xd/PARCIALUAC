@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:All4One="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/itemMenu"
-        android:icon="@drawable/ic_more"
-        android:title="none"
-        All4One:showAsAction="always">
-        <menu>
-            <item
-                android:id="@+id/limpiar"
-                android:title="Limpiar Datos"
-                android:icon="@drawable/ic_share"
-                />
+    <item
+        android:id="@+id/limpiar_list"
+        android:title="Limpiar Datos"
+        />
 
-            <item
-                android:id="@+id/lista"
-                android:title="Ver Listado"
-                android:icon="@drawable/ic_cloud"
-                />
-
-        </menu>
-    </item>
+    <item
+        android:id="@+id/show"
+        android:title="Ver Listado"
+        />
 </menu>

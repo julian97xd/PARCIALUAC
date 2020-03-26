@@ -1,25 +1,21 @@
-package com.developer.parcialandroid.activitys;
+package com.julian.parcialJulian;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-import com.developer.parcialandroid.R;
-import com.developer.parcialandroid.model.Person;
+import com.julian.parcialJulian.Contact;
+import com.julian.parcialandroid.R;
 
-public class AddPersonActivity extends AppCompatActivity {
-
-    public static final String TAG = AddPersonActivity.class.getSimpleName();
+public class actividad_add extends AppCompatActivity {
 
     private Spinner spinGroup;
     private EditText edtName, edtPhone;
@@ -52,13 +48,13 @@ public class AddPersonActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (checkForm()){
-                    Person person = new Person(
+                    Contact contact = new Contact(
                             edtName.getText().toString(),
                             edtPhone.getText().toString(),
                             spinGroup.getItemAtPosition(spinGroup.getFirstVisiblePosition()).toString());
 
                     Intent intent = getIntent();
-                    intent.putExtra("newPerson",  person);
+                    intent.putExtra("newPerson", contact);
                     setResult(RESULT_OK, intent);
                     finish();
                 }
@@ -99,11 +95,11 @@ public class AddPersonActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.limpiar:
+            case R.id.limpiar_list:
                 edtName.setText("");
                 edtPhone.setText("");
                 return true;
-            case R.id.lista:
+            case R.id.show:
                 finish();
                 return true;
             default:

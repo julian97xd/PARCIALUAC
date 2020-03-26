@@ -2,14 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:All4One="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/capital_name"
-        android:title="Nombre Mayus"
-        android:icon="@drawable/ic_format_mayus"
-        />
+        android:id="@+id/Upper"
+        android:title="Convetir en mayuscula"
+     />
 
     <item
-        android:id="@+id/phoneRandom"
+        android:id="@+id/phone"
         android:title="Número Random"
-        android:icon="@drawable/ic_phone"
-        />
+       />
 </menu>
